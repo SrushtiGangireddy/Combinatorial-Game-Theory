@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();
+        
+        for(int i=0;i<t;i++){
+            int n = sc.nextInt();
+            
+            int counter = 0;
+            int xored = 0;
+            
+            ArrayList<Integer> stones = new ArrayList<Integer>();
+            
+            for(int j=0;j<n;j++){
+                int temp = sc.nextInt();
+                stones.add(temp);
+                if(temp == 1){
+                    counter++;
+                }
+            }
+            
+            if(counter == stones.size()){
+                int size = stones.size();
+                if((size % 2 == 0)){
+                    System.out.println("First");
+                }else{
+                    System.out.println("Second");
+                }
+            }else{
+                
+                for(Integer stone:stones){
+                    xored = (xored ^ stone);
+                }
+                
+                if(xored == 0){
+                    System.out.println("Second");
+                }else{
+                    System.out.println("First");
+                }
+            
+            }
+        }
+    }
+}
