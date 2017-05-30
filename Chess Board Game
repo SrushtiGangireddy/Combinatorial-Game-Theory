@@ -1,0 +1,56 @@
+/*
+
+The game starts on a 15*15 chess board.
+Valid Moves (x,y) ==> (x-2,y+1) / (x-2,y-1) / (x+1,y-2) / (x-1,y-2)
+
+First analyze the losing positions on the board.
+If the player is able to force the opponent to one of this losing positions he wins else the other player wins
+
+LLWW LLWW LLWW LLWW
+LLWW LLWW LLWW LLWW
+WWWW WWWW WWWW WWWW
+WWWW WWWW WWWW WWWW
+
+LLWW LLWW LLWW LLWW
+LLWW LLWW LLWW LLWW
+WWWW WWWW WWWW WWWW
+WWWW WWWW WWWW WWWW
+
+LLWW LLWW LLWW LLWW
+LLWW LLWW LWWW LLWW
+WWWW WWWW WWWW WWWW
+WWWW WWWW WWWW WWWW
+ 
+LLWW LLWW LLWW LLWW
+LLWW LLWW LLWW LLWW
+WWWW WWWW WWWW WWWW
+WWWW WWWW WWWW WWWW
+
+If the player is in the losing position he loses if he is in the winning position he wins
+
+*/
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();
+        
+        for(int i=0;i<t;i++){
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            
+            if((x%4 == 1 || x%4 == 2) && (y%4 == 1 | y%4 == 2)){
+                System.out.println("Second");
+            }else{
+                System.out.println("First");
+            }
+            
+        }
+        
+    }
+}
