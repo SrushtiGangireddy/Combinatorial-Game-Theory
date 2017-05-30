@@ -1,0 +1,57 @@
+/*
+
+Game starts with n piles of stones indexed from o to n-1.
+Each pile has some number of stones.
+Player 1 and 2 take alteranating turns and make optimum moves.
+Player 1 always starts the game first.
+
+Valid Move ==> Current player must choose one pile and take atleast one stone from it.
+
+Determine the winner.
+
+Nim-Sum ==> XOR value of all the number of stones in all piles at any point of time in the game is the nim-sum at that point.
+
+Two factors are needed to determine the winner at any point of time:
+The player who starts the game first and the initial configuration of the stones.
+
+IF the nim-sum calculated at the starting is non-zero player 1 wins else player 2 wins.
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int g = sc.nextInt();
+        
+        for(int i=0;i<g;i++){
+            int n = sc.nextInt();
+            ArrayList<Integer> stones = new ArrayList<Integer>();
+          
+            for(int j=0;j<n;j++){
+                stones.add(sc.nextInt());
+            }
+         
+            int xored = 0;  
+            
+            for(int k=0;k<n;k++){
+                int a = stones.get(k);
+                
+                xored = (xored ^ a);
+                
+            }
+            
+            if(xored == 0){
+                System.out.println("Second");
+            }else{
+                System.out.println("First");
+            }
+            
+            
+        }
+        
+        
+    }
+}
