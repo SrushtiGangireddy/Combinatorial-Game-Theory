@@ -1,0 +1,41 @@
+/*
+
+There would be two players playing in alternating turns.
+Player one would always make t he first move and both players play optimally.
+During each turn the player is to choose one tower of height x and reduce it to a tower of height y where x%y == 0.
+If the current player does not have any valid move, he loses.
+
+If the tower is of height 1 there is no positive number that evenly divides 1 and the player 1 does not have any valid move so he loses.
+If the number of towers is even if player 1 choses one tower and reduces it to height 1, player 2 does the mirror image of same move and player 2 
+always wins.
+On the other hand if there are odd number of towers whatever the move player 1 always wins
+
+*/
+
+import java.io.*;
+import java.util.*;
+
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int t= sc.nextInt();
+        
+        for(int i=0;i<t;i++){
+            int n = sc.nextInt();
+            int m = sc.nextInt();
+            
+            if(m == 1){
+                System.out.println("2");
+            }else if(n%2 == 0){
+                System.out.println("2");
+            }else if(n%2 != 0){
+                System.out.println("1");
+            }
+            
+            
+        }
+        
+        
+    }
+}
