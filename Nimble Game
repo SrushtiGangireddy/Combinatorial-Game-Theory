@@ -1,0 +1,47 @@
+import java.util.*;
+import java.io.*;
+
+public class Solution{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        
+        int t = sc.nextInt();
+        
+        for(int i=0;i<t;i++){
+            int n = sc.nextInt();
+            int xor = 0;
+            for(int j=0;j<n;j++){
+                int coins = sc.nextInt();
+                
+                if((coins%2 != 0)){
+                    xor ^= j;
+                }
+                
+            }
+            
+            if(xor == 0){
+                System.out.println("Second");
+            }else{
+                System.out.println("First");
+            }
+            
+            
+        }
+        
+        
+    }
+}
+
+
+/*
+Nimble Game is the variation of the standard nim game where in there would be some number of squares with some number of coins in each.
+Each player take alternating turns to take 1 coin from one square and put it in any of the left squares.
+The game goes on till all the coins are in the square 0 (Most left Square) or no player can make the valid move.
+
+If the number of coins in the square are even, since the player can only take one coin all the moves of player 1 would be mirrored by player 2.
+So we do not consider the squares with even number of coins for determining the winner of this game.
+
+If the number of coins in the square is not even, we xor the square number of that square.
+
+If the xor finally is 0 then player 2 wins else player 1.
+*/
